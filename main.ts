@@ -3,6 +3,24 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, lo
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
     tiles.setTileAt(location, assets.tile`myTile3`)
+    info.changeLifeBy(1)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+    game.gameOver(true)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`myTile8`)
+    info.changeLifeBy(1)
+})
+info.onLifeZero(function () {
+    game.gameOver(true)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`myTile7`)
+    info.changeLifeBy(1)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`myTile7`)
     animation.runImageAnimation(
     mySprite,
     [img`
@@ -26,24 +44,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, l
     500,
     false
     )
-    info.changeLifeBy(1)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
-    game.gameOver(true)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`myTile8`)
-    info.changeLifeBy(1)
-})
-info.onLifeZero(function () {
-    game.gameOver(false)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`myTile7`)
-    info.changeLifeBy(1)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`myTile7`)
     info.changeLifeBy(1)
 })
 let mySprite: Sprite = null
